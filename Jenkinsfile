@@ -2,7 +2,7 @@ pipeline {
   agent none
 	
 	stages {
-		stage ('C-Project and Java-Project')
+		stage ('C-Project and Java-Project') {
 		parallel {
       stage('build C-Project') {
 	agent { label 'label1'}
@@ -21,4 +21,5 @@ pipeline {
 	     }
 	}
  }
+}
 }

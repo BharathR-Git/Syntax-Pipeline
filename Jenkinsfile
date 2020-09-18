@@ -4,25 +4,25 @@ pipeline {
 		stages {
 		
 			stage('STAGE 1'){
-				step {
+				steps {
 					sh 'sleep 10'
 					}
 			}
 			
 			stage('STAGE 2'){
-				step {
+				steps {
 					sh 'sleep 10'
 				}
 			}
 		
 			stage('STAGE 3'){
-				step {
+				steps {
 					sh 'sleep 10'
 				}
 			}
 			
 			stage {'STAGE 4'}{
-				step {
+				steps {
 					sh - 'sleep 10'
 				}
 			}

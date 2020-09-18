@@ -1,8 +1,8 @@
 pipeline {
   agent none
-  
-    stages {
-    
+	
+	stages {
+		parallel {
       stage('build C-Project') {
 	agent { label 'label1'}
          steps {
@@ -20,3 +20,4 @@ pipeline {
 	     }
 	}
  }
+}

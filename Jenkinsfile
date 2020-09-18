@@ -6,7 +6,7 @@ pipeline {
       stage('build C-Project') {
         steps {
           git 'https://github.com/BharathR-Git/Jenkins-C-Project.git'
-          sh - make
+          sh 'make'
               }
 	 }
 			

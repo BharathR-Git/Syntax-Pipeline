@@ -10,7 +10,7 @@ pipeline {
 						git 'https://github.com/BharathR-Git/Jenkins-C-Project.git'
 						sh '''
 						sleep 10
-						echo "This is roject"
+						echo "This is C-Project"
 						make
 						'''
 					}
@@ -19,7 +19,11 @@ pipeline {
 					agent { label 'label2'}
 					steps {
 						git 'https://github.com/BharathR-Git/Jenkins-Java-Project.git'
-						sh 'mvn clean install'
+						sh '''
+						sleep 10
+						echo "This is Java-Project"
+						mvn clean install
+						'''
 					}
 				}
 			}

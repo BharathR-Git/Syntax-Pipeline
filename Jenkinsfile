@@ -15,7 +15,7 @@ pipeline {
 						'''
 					}
 				}
-				stage ('build Java-Project'){
+				stage ('build Java-Project1'){
 					agent { label 'label2'}
 					steps {
 						git 'https://github.com/BharathR-Git/Jenkins-Java-Project.git'
@@ -26,6 +26,17 @@ pipeline {
 						'''
 					}
 				}
+			}
+		}
+		stage ('build Java-Project2'){
+			agent {label 'master'}
+			steps {
+				git 'https://github.com/BharathR-Git/Java-Project.git'
+				sh '''
+				sleep 10
+				echo "This is Java-Project"
+				mvn clean install
+				'''
 			}
 		}
 	}

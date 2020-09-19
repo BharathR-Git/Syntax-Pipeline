@@ -23,7 +23,6 @@ pipeline {
 						sleep 10
 						echo "This is Java-Project"
 						mvn clean install
-						mvn clean deploy
 						'''
 					}
 				}
@@ -37,7 +36,6 @@ pipeline {
 				sleep 10
 				echo "This is Java-Project"
 				mvn clean install
-				mvn clean deploy
 				'''
 			}
 		}

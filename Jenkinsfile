@@ -23,7 +23,7 @@ pipeline {
 						sleep 10
 						echo "This is Java-Project"
 						mvn clean install
-						cd /var/lib/jenkins/workspace/Jenkins-Pipeline/target
+						cd /home/ec2-user/workspace/Jenkins-Pipeline/target
 						scp *.war /home/ec2-user/apache-tomcat-9.0.38/webapps
 						'''
 					}

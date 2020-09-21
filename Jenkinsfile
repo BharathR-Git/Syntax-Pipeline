@@ -30,7 +30,7 @@ pipeline {
 			}
 		}
 		stage ('build Java-Project2'){
-			agent {label 'master'}
+			agent {label 'label2'}
 			steps {
 				git 'https://github.com/BharathR-Git/Java-Project.git'
 				sh '''

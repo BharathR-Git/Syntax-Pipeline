@@ -22,9 +22,11 @@ pipeline {
 						sh '''
 						sleep 10
 						echo "This is Java-Project"
-						mvn clean package
+						mvn clean install
+						sshagent(['e0fe0c96-a756-4cf4-b8b9-b094f2419eeb']) {
 						scp -o StrictHostKeyChecking=no /home/ec2-user/workspace/Jenkins-Java-Project/target/hello-world-war-1.0.0.war ec2-user@3.135.248.131 http://3.135.248.131:8080/manager/text/deploy?path=/Jenkins-Java-Project
 						'''
+						}
 					}
 				}		
 			}

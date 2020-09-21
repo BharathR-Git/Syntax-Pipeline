@@ -23,8 +23,7 @@ pipeline {
 						sleep 10
 						echo "This is Java-Project"
 						mvn clean package
-						curl -v -u admin:admin -T /home/ec2-user/workspace/Jenkins-Java-Project/target/hello-world-war-1.0.0.war 
-						http://3.135.248.131:8080/manager/text/deploy?path=/Jenkins-Java-Project
+						curl -v -u admin:admin -T /home/ec2-user/workspace/Jenkins-Java-Project/target/hello-world-war-1.0.0.war http://3.135.248.131:8080/manager/text/deploy?path=/Jenkins-Java-Project
 						'''
 					}
 				}		
@@ -38,8 +37,7 @@ pipeline {
 				sleep 10
 				echo "This is Java-Project"
 				mvn clean install
-				curl -v -u admin:admin -T /home/ec2-user/workspace/Java-Project/target/mvn-hello-world.war 
-				http://3.135.248.131:8080/manager/text/deploy?path=/Java-Project
+				curl -v -u admin:admin -T /home/ec2-user/workspace/Java-Project/target/mvn-hello-world.war http://3.135.248.131:8080/manager/text/deploy?path=/Java-Project
 				'''
 			}
 		}

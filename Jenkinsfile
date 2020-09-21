@@ -34,6 +34,7 @@ pipeline {
 				}
 			}
 		}
+			}
 		stage ('build Java-Project2'){
 			agent {label 'master'}
 			steps {

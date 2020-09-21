@@ -26,6 +26,12 @@ pipeline {
 						'''
 					}
 				}
+				stage ('deploy Java-Project1'){
+					agent { label 'label2'}
+					steps{
+						sshagent(['admin']) {
+							sh 'scp /var/lib/jenkins/workspace/Jenkins-Pipeline/target/mvn-hello-world.war ec2user@3.135.248.131 /home/ec2-user/apache-tomcat-9.0.38/webapps'
+				}
 			}
 		}
 		stage ('build Java-Project2'){

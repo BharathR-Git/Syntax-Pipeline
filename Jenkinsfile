@@ -22,9 +22,8 @@ pipeline {
 						sh '''
 						sleep 10
 						echo "This is Java-Project"
-						mvn clean install
-						cd /home/ec2-user/workspace/Jenkins-Pipeline/target
-						scp *.war /home/ec2-user/apache-tomcat-9.0.38/webapps
+						mvn clean package
+						curl -v -u admin:admin -T /home/ec2-user/workspace/Jenkins-Java-Project/target/hello-world-war-1.0.0.war http://3.135.248.131:8080/manager/html/undeploy?path=/Jenkins-Java-Project
 						'''
 					}
 				}		

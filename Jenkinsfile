@@ -30,7 +30,7 @@ pipeline {
 					agent { label 'label2'}
 					steps {
 					sshagent(['69a21f78-391e-4e63-a4a8-43296beb20d9']) {
-						sh - 'scp -o StrictHostKeyChecking=no /target/*.war ec2-user@3.128.32.167:/apache-tomcat-9.0.38/webapps
+						sh 'scp -o StrictHostKeyChecking=no target/*.war ec2-user@3.128.32.167:/apache-tomcat-9.0.38/webapps'
 
 						}
 					}

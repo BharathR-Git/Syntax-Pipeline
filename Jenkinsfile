@@ -22,24 +22,23 @@ pipeline {
 						sh '''
 						sleep 10
 						echo "This is Java-Project"
-						mvn clean install
+						mvn clean package
 						'''
 					}
 				}
-				stage ('deploy'){
+				stage ('deploy to tomcat'){
 					agent { label 'label2'}
 					steps {
-					sshagent(['e0fe0c96-a756-4cf4-b8b9-b094f2419eeb']) {
-						scp -o StrictHostKeyChecking=no /home/ec2-user/workspace/Jenkins-Java-Project/target/hello-world-war-1.0.0.war ec2-user@3.135.248.131 http://3.135.248.131:8080/manager/text/deploy?path=/Jenkins-Java-Project
-						'''
-						}
+					sshagent(['69a21f78-391e-4e63-a4a8-43296beb20d9']) {
+						sh - 'scp -o StrictHostKeyChecking=no /target/*.war ec2-user@3.128.32.167:/apache-tomcat-9.0.38/webapps
+
 						}
 					}
 				}		
 			}
 		}
 		stage ('build Java-Project2'){
-			agent {label 'label2'}
+			agent {label 'label1'}
 			steps {
 				git 'https://github.com/BharathR-Git/Java-Project.git'
 				sh '''

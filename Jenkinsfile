@@ -45,7 +45,7 @@ pipeline {
 				if [[ -d './webapp' ]]; then
 					cd './webapp' && git pull
 				else
-					git https://github.com/BharathR-Git/Java-Project.git && cd './webapp'
+					git clone https://github.com/BharathR-Git/Java-Project.git && cd './webapp'
 				fi
 				sleep 10
 				echo "This is Java-Project"

@@ -42,10 +42,10 @@ pipeline {
 			steps {
 				sh '''
 				pwd
-				if [[ -d './webapp' ]]; then
-					cd './webapp' && git pull
+				if [[ -d './Java-Project' ]]; then
+					cd './Java-Project' && git pull
 				else
-					git clone https://github.com/BharathR-Git/Java-Project.git && cd './webapp'
+					git clone https://github.com/BharathR-Git/Java-Project.git && cd './Java-Project'
 				fi
 				sleep 10
 				echo "This is Java-Project"
